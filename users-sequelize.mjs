@@ -88,11 +88,10 @@ export async function destroy(username) {
     user.destroy();
 }
 
-export async function userPasswordCheck(username, password) {    
-    const SQUser = await connectDB();    
-    const user = await SQUser.find({ 
-        where: { username: username } 
-    });    
+export async function userPasswordCheck(username, password) {
+    const SQUser = await connectDB();
+    const user = await SQUser.findOne({where: {username: username}});
+
     if (!user) {       
         return { check: false,
         username: username,

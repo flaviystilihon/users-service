@@ -115,7 +115,7 @@ server.del('/destroy/:username', async (req, res, next) => {
 // Check password
 server.post('/passwordCheck', async (req, res, next) => {    
     try {        
-        await usersModel.userPasswordCheck(                        
+        let check = await usersModel.userPasswordCheck(                        
             req.params.username, 
             req.params.password
         );   
@@ -151,7 +151,7 @@ var apiKeys = [ {
     key: 'D4ED43C0-8BD6-4FE2-B358-7C0E230D11EF' 
 } ];
 
-function check(req, res, next) {     
+function check(req, res, next) {
     if (req.authorization) {         
         var found = false;         
         for (let auth of apiKeys) {             
