@@ -77,7 +77,7 @@ server.post('/find-or-create', async (req, res, next) => {
         
         res.send(result);        
         next(false);    
-    } catch(err) { 
+    } catch(err) {
         res.send(500, err); 
         next(false); 
     }
@@ -114,7 +114,7 @@ server.del('/destroy/:username', async (req, res, next) => {
 
 // Check password
 server.post('/passwordCheck', async (req, res, next) => {    
-    try {        
+    try {
         let check = await usersModel.userPasswordCheck(                        
             req.params.username, 
             req.params.password

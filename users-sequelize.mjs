@@ -75,7 +75,7 @@ export async function find(username) {
     const SQUser = await connectDB();
     const user = await SQUser.findOne({where: {username: username}});
     const ret = user ? sanitizedUser(user) : undefined;
-    return ret;
+    return ret;  
 }
 
 export async function destroy(username) {   
@@ -104,7 +104,7 @@ export async function userPasswordCheck(username, password) {
 }
 
 export async function findOrCreate(profile) {
-    const user = await find({where: {username: username}});
+    const user = await find(profile.username);
     if (user) return user;
 
     return await create(
@@ -115,7 +115,8 @@ export async function findOrCreate(profile) {
         profile.givenName,
         profile.middleName,
         profile.emails,
-        profile.photos);
+        profile.photos
+    );
 }
 
 export async function listUsers() {    
