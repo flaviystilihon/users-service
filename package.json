@@ -5,7 +5,8 @@
   "main": "user-server.mjs",
   "scripts": {
     "start": "cross-env DEBUG=users:* PORT=3333 SEQUELIZE_CONNECT=sequelize-sqlite.yaml node --experimental-modules user-server",
-    "test-request": "cross-env DEBUG=users:* PORT=3333 node users-find.js"
+    "test-request": "cross-env DEBUG=users:* PORT=3333 node users-find.js",
+    "setupuser": "PORT=3333 node users-add"
   },
   "author": "",
   "license": "ISC",
