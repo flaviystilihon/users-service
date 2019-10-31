@@ -19,7 +19,7 @@
     "restify-client": "^1.0.5",
     "restify-clients": "^2.6.4",
     "restify-plugins": "^1.6.0",
-    "sequelize": "^5.2.8",
+    "sequelize": "^5.15.1",
     "sqlite": "^3.0.3"
   }
 }
